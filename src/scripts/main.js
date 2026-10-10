@@ -19,8 +19,7 @@ function onError() {
 }
 
 // eslint-disable-next-line promise/param-names
-const promise1 = new Promise((...args) => {
-  const resolve = args[0];
+const promise1 = new Promise((resolve) => {
   const logo = document.querySelector('.logo');
 
   logo.addEventListener('click', () => {
@@ -29,9 +28,7 @@ const promise1 = new Promise((...args) => {
 });
 
 // eslint-disable-next-line promise/param-names
-const promise2 = new Promise((...args) => {
-  const reject = args[1];
-
+const promise2 = new Promise((_, reject) => {
   setTimeout(() => {
     reject(new Error('Promise was rejected!'));
   }, 3000);
